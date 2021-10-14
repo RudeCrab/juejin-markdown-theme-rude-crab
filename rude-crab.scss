@@ -1,8 +1,11 @@
 $monospace-font: JetBranins Mono, Monaco, Consolas, 'Courier New', monospace;
 $line-space: 22px;
 
+$baseColor: #EF7060;  
+
 
 .markdown-body {
+  position: relative;
   word-break: break-word;
   line-height: 1.75;
   font-weight: 400;
@@ -42,21 +45,21 @@ $line-space: 22px;
     border-top-right-radius: 6px;
     margin-right: 2px;
     box-shadow: 6px 3px 0 0 rgb(239 112 96 / 20%);
-  }
-  
-  h2:before {
+
+    &::before {
       content: " ";
       display: inline-block;
       width: 8px;
+    }
+
+    &::after {
+      content: " ";
+      position: absolute;
+      display: block;
+      width: calc(100%);
+      border-bottom: 3px solid #EF7060;
+    }
   }
-  
-  h2:after {
-    content: " ";
-    position: absolute;
-    display: block;
-    width: calc(100% - 50px);
-    border-bottom: 3px solid #EF7060;
-}
   
   h3 {
     font-size: 18px;
